@@ -29,7 +29,7 @@ function Products() {
                 return (
                     <article>
                         <h2>{product.title}</h2>
-                        <p>{product.price} e</p>
+                        <p>{product.price} €</p>
                     </article>                 
                 )
             }
