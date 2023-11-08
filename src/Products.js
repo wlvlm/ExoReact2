@@ -1,20 +1,41 @@
-function Products(){
-    return(
-        <div>
-            <article className="App-article">
-                <h3>Chaussures</h3>
-                <p>150€</p>
-            </article>
-            <article className="App-article">
-                <h3>Aspirateur</h3>
-                <p>800€</p>
-            </article>
-            <article className="App-article">
-                <h3>Tapis</h3>
-                <p>100€</p>
-            </article>
-        </div>
-    )
-}
-
-export default Products;
+function Products() {
+    const productsFromDb = [
+      {
+        title: "Paillasson",
+        price: 20,
+        isPublished: true,
+      },
+      {
+        title: "Aspirateur",
+        price: 340,
+        isPublished: true,
+      },
+      {
+        title: "Lampe",
+        price: 50,
+        isPublished: true,
+      },
+      {
+        title: "Casque vélo",
+        price: 60,
+        isPublished: true,
+      },
+    ];
+  
+    return (
+      <main>
+        {productsFromDb.map((product) => {
+            if (product.isPublished) {
+                return (
+                    <article>
+                        <h2>{product.title}</h2>
+                        <p>{product.price} e</p>
+                    </article>                 
+                )
+            }
+        })}
+      </main>
+    );
+  }
+  
+  export default Products;
