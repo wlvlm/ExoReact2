@@ -25,14 +25,16 @@ function Products() {
     return (
       <main>
         {productsFromDb.map((product) => {
-            if (product.isPublished) {
-                return (
-                    <article>
-                        <h2>{product.title}</h2>
-                        <p>{product.price} €</p>
-                    </article>                 
-                )
-            }
+            return (
+                <>
+                    {article.isPublished && (
+                        <article>
+                            <h2>{product.title}</h2>
+                            <p>{product.price} €</p>
+                        </article>
+                    )}
+                </>                     
+            )
         })}
       </main>
     );
